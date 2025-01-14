@@ -1,16 +1,13 @@
 import { Header } from "app/components/shared/Header";
 import { Footer } from "app/components/shared/Footer";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import 'app/sass/globals.sass'
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  weight: ["100", "300","500", "700"],
   subsets: ["latin"],
-});
+})
 
 export default function RootLayout({
   children,
@@ -19,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${roboto.className}`}>
         <Header />
         {children}
         <Footer />
